@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SplitEasy – Roommate Expense Splitter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🏠 SplitEasy</h1>
+      <p>Track and split expenses with your roommates</p>
+    </header>
+
+    <!-- Roommates Section -->
+    <section class="card" id="roommates-section">
+      <h2>Roommates</h2>
+      <div class="input-row">
+        <input type="text" id="roommate-name" placeholder="Enter roommate name" />
+        <button onclick="addRoommate()">Add</button>
+      </div>
+      <ul id="roommate-list"></ul>
+    </section>
+
+    <!-- Add Expense Section -->
+    <section class="card" id="expense-section">
+      <h2>Add Expense</h2>
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" id="expense-desc" placeholder="e.g. Groceries" />
+      </div>
+      <div class="form-group">
+        <label>Amount ($)</label>
+        <input type="number" id="expense-amount" placeholder="0.00" min="0" step="0.01" />
+      </div>
+      <div class="form-group">
+        <label>Paid by</label>
+        <select id="expense-payer"></select>
+      </div>
+      <div class="form-group">
+        <label>Split between</label>
+        <div id="split-checkboxes" class="checkbox-group"></div>
+      </div>
+      <button class="btn-primary" onclick="addExpense()">Add Expense</button>
+    </section>
+
+    <!-- Expenses Log -->
+    <section class="card" id="log-section">
+      <h2>Expense Log</h2>
+      <ul id="expense-list"><li class="empty">No expenses yet.</li></ul>
+    </section>
+
+    <!-- Balances Section -->
+    <section class="card" id="balances-section">
+      <h2>Balances</h2>
+      <div id="balances-display"><p class="empty">Add roommates and expenses to see balances.</p></div>
+    </section>
+
+    <!-- Settlements Section -->
+    <section class="card" id="settlements-section">
+      <h2>Who Pays Whom</h2>
+      <div id="settlements-display"><p class="empty">No settlements needed yet.</p></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
